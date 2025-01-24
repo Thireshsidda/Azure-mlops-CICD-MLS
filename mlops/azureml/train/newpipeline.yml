@@ -1,6 +1,6 @@
 $schema: https://azuremlschemas.azureedge.net/latest/pipelineJob.schema.json
 type: pipeline
-display_name: decision_tree_training_pipeline
+display_name: machine_failure_training_pipeline
 experiment_name: machine-failure-training
 description: Training Pipeline to predict machine failure using Decision Tree classifier
 
@@ -62,7 +62,6 @@ jobs:
       max_total_trials: 20
       max_concurrent_trials: 10
       timeout: 7200
-
 
   register_model:
     name: register_model
