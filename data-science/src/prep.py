@@ -8,6 +8,7 @@ import argparse
 from pathlib import Path
 import os
 import pandas as pd
+from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 import mlflow
 
@@ -27,7 +28,11 @@ def main(args):
     '''Read, split, and save datasets'''
 
     # Reading Data
-    df = pd.read_csv(args.raw_data)    
+    df = pd.read_csv(args.raw_data)
+
+    # Encoding the categorical 'Type' column
+    label_encoder = LabelEncoder()
+    df['Type'] = label_encoder.fit_transform(df['Type'])
 
     # Split Data into train and test datasets
     train_df, test_df = train_test_split(df, test_size=args.test_train_ratio, random_state=42)
