@@ -1,7 +1,12 @@
 name: deploy-model-training-pipeline
 
-on: 
-  workflow_dispatch:
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   get-config:
