@@ -8,7 +8,7 @@ import argparse
 from pathlib import Path
 import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import recall_score, confusion_matrix
+from sklearn.metrics import accuracy_score
 import mlflow
 import mlflow.sklearn
 from matplotlib import pyplot as plt
